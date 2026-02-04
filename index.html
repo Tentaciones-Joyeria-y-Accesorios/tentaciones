@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentaciones | Joyería & Accesorios</title>
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --marfil:#F8F5EF;
+      --oro:#C9A24D;
+      --oro-suave:#E6D3A3;
+      --vino:#7A1F3D;
+      --texto:#3A2F2F;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:'Montserrat', sans-serif;
+      background:var(--marfil);
+      color:var(--texto);
+    }
+
+    /* HEADER */
+    header{
+      background:linear-gradient(180deg, var(--oro-suave), var(--marfil));
+      padding:40px 20px 30px;
+      text-align:center;
+    }
+
+    header h1{
+      font-family:'Playfair Display', serif;
+      font-size:42px;
+      letter-spacing:2px;
+      margin:0;
+      color:var(--vino);
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:14px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    /* NAV */
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      padding:15px;
+      background:#fff;
+      border-bottom:1px solid #e5e5e5;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:var(--texto);
+      font-weight:500;
+      font-size:14px;
+    }
+
+    nav a:hover{color:var(--vino)}
+
+    /* HERO */
+    .hero{
+      padding:60px 20px;
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .hero h2{
+      font-family:'Playfair Display', serif;
+      font-size:36px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    /* CATALOGO */
+    .catalogo{
+      padding:50px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      overflow:hidden;
+      transition:.3s;
+    }
+
+    .card:hover{transform:translateY(-5px)}
+
+    .card img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .info{
+      padding:20px;
+      text-align:center;
+    }
+
+    .info h3{
+      font-family:'Playfair Display', serif;
+      margin:0 0 8px;
+      font-size:20px;
+    }
+
+    .precio{
+      color:var(--vino);
+      font-weight:600;
+      margin-bottom:12px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 22px;
+      border-radius:30px;
+      background:var(--oro);
+      color:#fff;
+      text-decoration:none;
+      font-size:13px;
+      letter-spacing:1px;
+    }
+
+    .btn:hover{background:var(--vino)}
+
+    /* FOOTER */
+    footer{
+      margin-top:60px;
+      padding:30px 20px;
+      background:#fff;
+      text-align:center;
+      font-size:13px;
+      color:#777;
+    }
+
+    footer strong{color:var(--vino)}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>TENTACIONES</h1>
+  <p>Joyería & Accesorios</p>
+</header>
+
+<nav>
+  <a href="#catalogo">Catálogo</a>
+  <a href="#">Woman</a>
+  <a href="#">Men</a>
+  <a href="#">Contacto</a>
+</nav>
+
+<section class="hero">
+  <h2>Lujo que se siente</h2>
+  <p>Joyas seleccionadas para mujeres y hombres que buscan elegancia, presencia y detalle. Cada pieza está pensada para elevar tu estilo.</p>
+</section>
+
+<section class="catalogo" id="catalogo">
+  <div class="grid">
+
+    <!-- PRODUCTO -->
+    <div class="card">
+      <img src="AQUI_TU_IMAGEN.jpg" alt="Anillo Tentaciones">
+      <div class="info">
+        <h3>Anillo Oro Laminado</h3>
+        <div class="precio">$1,200 MXN</div>
+        <a href="https://wa.me/52TU_NUMERO" class="btn">Comprar por WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- DUPLICA ESTA CARD PARA MAS PRODUCTOS -->
+
+  </div>
+</section>
+
+<footer>
+  © 2026 <strong>Tentaciones Joyería & Accesorios</strong><br>
+  Ventas por WhatsApp | Instagram | Bazar físico
+</footer>
+
+</body>
+</html>
