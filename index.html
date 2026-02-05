@@ -3,39 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <!--  <title>Tentaciones | Joyería & Accesorios</title> -->
 
   <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-
-      body {
-        margin: 0;
-        font-family: 'Georgia', serif;
-        background-color: #f7f3ed; /* marfil */
-        color: #2b2b2b;
-        text-align: center;
-      }
-    
-      .logo-header {
-        padding: 30px 0;
-        background-color: #f7f3ed;
-      }
-    
-      .logo {
-              max-width: 260px;
-              width: 100%;
-            }
-            
-            @media (min-width: 768px) {
-              .logo {
-                max-width: 360px;
-              }
-            }
-
-
-
     :root{
       --marfil:#F8F5EF;
       --oro:#C9A24D;
@@ -47,33 +19,25 @@
     *{box-sizing:border-box}
 
     body{
-      
       margin:0;
       font-family:'Montserrat', sans-serif;
       background:var(--marfil);
       color:var(--texto);
-    }
-
-    /* HEADER */
-    header{
-      background:linear-gradient(180deg, var(--oro-suave), var(--marfil));
-      padding:40px 20px 30px;
       text-align:center;
     }
 
-    header h1{
-      font-family:'Playfair Display', serif;
-      font-size:42px;
-      letter-spacing:2px;
-      margin:0;
-      color:var(--vino);
+    /* LOGO */
+    .logo-header{
+      padding:30px 0;
     }
 
-    header p{
-      margin-top:10px;
-      font-size:14px;
-      letter-spacing:1px;
-      text-transform:uppercase;
+    .logo{
+      max-width:260px;
+      width:100%;
+    }
+
+    @media (min-width:768px){
+      .logo{max-width:360px;}
     }
 
     /* NAV */
@@ -98,35 +62,51 @@
 
     nav a:hover{color:var(--vino)}
 
+    /* FILTROS */
+    .filtros{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      padding:25px 0;
+    }
+
+    .filtros button{
+      padding:10px 24px;
+      border-radius:30px;
+      border:1px solid var(--oro);
+      background:#fff;
+      cursor:pointer;
+      transition:.3s;
+      font-family:'Montserrat', sans-serif;
+    }
+
+    .filtros button:hover{
+      background:var(--oro);
+      color:#fff;
+    }
+
     /* HERO */
     .hero{
-      padding:60px 20px;
-      text-align:center;
       max-width:900px;
       margin:auto;
+      padding:40px 20px;
     }
 
     .hero h2{
       font-family:'Playfair Display', serif;
       font-size:36px;
-      margin-bottom:15px;
-    }
-
-    .hero p{
-      font-size:16px;
-      line-height:1.6;
     }
 
     /* CATALOGO */
     .catalogo{
-      padding:50px 20px;
       max-width:1200px;
       margin:auto;
+      padding:40px 20px;
     }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:30px;
     }
 
@@ -148,13 +128,11 @@
 
     .info{
       padding:20px;
-      text-align:center;
     }
 
     .info h3{
       font-family:'Playfair Display', serif;
       margin:0 0 8px;
-      font-size:20px;
     }
 
     .precio{
@@ -165,168 +143,124 @@
 
     .btn{
       display:inline-block;
-      margin-top:10px;
       padding:10px 22px;
       border-radius:30px;
       background:var(--oro);
       color:#fff;
       text-decoration:none;
       font-size:13px;
-      letter-spacing:1px;
     }
 
     .btn:hover{background:var(--vino)}
 
-    /* FOOTER */
     footer{
       margin-top:60px;
-      padding:30px 20px;
+      padding:30px;
       background:#fff;
-      text-align:center;
       font-size:13px;
       color:#777;
     }
-
-    footer strong{color:var(--vino)}
-
-    .filtros{
-        display:flex;
-        justify-content:center;
-        gap:15px;
-        margin-bottom:40px;
-      }
-      
-      .filtros button{
-        padding:10px 24px;
-        border-radius:30px;
-        border:1px solid var(--oro);
-        background:#fff;
-        color:var(--texto);
-        font-family:'Montserrat', sans-serif;
-        cursor:pointer;
-        transition:.3s;
-      }
-      
-      .filtros button:hover{
-        background:var(--oro);
-        color:#fff;
-      }
-
   </style>
 </head>
+
 <body>
 
-<!-- <header> -->
-
-   <header class="logo-header">
-      <img src="images/logo.png" alt="Logo Tentaciones" class="logo">
-    </header>
-  <!-- <h1>TENTACIONES</h1>
-  <p>Joyería & Accesorios</p>
-<!-- </header> -->
+<header class="logo-header">
+  <img src="images/logo.png" alt="Logo Tentaciones" class="logo">
+</header>
 
 <nav>
   <a href="#catalogo">Catálogo</a>
-  <a href="#">Woman</a>
-  <a href="#">Men</a>
   <a href="#">Contacto</a>
 </nav>
 
+<div class="filtros">
+  <button onclick="filtrar('all')">Todo</button>
+  <button onclick="filtrar('woman')">Woman</button>
+  <button onclick="filtrar('men')">Men</button>
+</div>
+
 <section class="hero">
   <h2>Lujo que se siente</h2>
-  <p>Joyas seleccionadas para mujeres y hombres que buscan elegancia, presencia y detalle. Cada pieza está pensada para elevar tu estilo.</p>
+  <p>Joyas seleccionadas para mujeres y hombres que buscan elegancia y presencia.</p>
 </section>
 
 <section class="catalogo" id="catalogo">
-  
-  <!-- FILTROS -->
-  <div class="filtros">
-    <button onclick="filtrar('all')">Todo</button>
-    <button onclick="filtrar('woman')">Woman</button>
-    <button onclick="filtrar('men')">Men</button>
-  </div>
-
   <div class="grid">
 
+    <!-- WOMAN -->
     <div class="card producto woman">
-      
-      <img src="images/collar_H1.png" alt="Collar Tentaciones">
-        <div class="info">
-            <h3>Collar Oro Laminado y Circonia</h3>
-            <div class="precio">$260 MXN</div>
-            <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
-        </div>
-
-      <img src="images/collar_V1.png" alt="Collar Tentaciones">
+      <img src="images/collar_V1.png" alt="">
       <div class="info">
         <h3>Collar Oro Laminado</h3>
         <div class="precio">$200 MXN</div>
-        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+        <a class="btn"
+           href="https://wa.me/527123421171?text=Me%20interesa%20el%20Collar%20Oro%20Laminado">
+           Comprar por WhatsApp
+        </a>
       </div>
+    </div>
 
-      <img src="images/collar_C2.png" alt="Collar Tentaciones">
+    <!-- WOMAN -->
+    <div class="card producto woman">
+      <img src="images/collar_C2.png" alt="">
       <div class="info">
         <h3>Collar Oro Laminado</h3>
         <div class="precio">$250 MXN</div>
-        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
-      </div>
-
-      <img src="images/collar_C3.png" alt="Collar Tentaciones">
-      <div class="info">
-        <h3>Collar Oro Laminado</h3>
-        <div class="precio">$290 MXN</div>
-        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
-      </div>
-
-      <img src="images/collar_F1.png" alt="Collar Tentaciones">
-      <div class="info">
-        <h3>Collar Acero Inoxidable</h3>
-        <div class="precio">$220 MXN</div>
-        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+        <a class="btn"
+           href="https://wa.me/527123421171?text=Me%20interesa%20el%20Collar%20Oro%20Laminado">
+           Comprar por WhatsApp
+        </a>
       </div>
     </div>
-    
+
+    <!-- MEN -->
     <div class="card producto men">
-
-    <!-- PRODUCTO -->
-
-      <img src="images/collar_C1.png" alt="Collar Tentaciones">
+      <img src="images/collar_C1.png" alt="">
       <div class="info">
-        <h3>Collar Oro Laminado</h3>
+        <h3>Collar Hombre Oro Laminado</h3>
         <div class="precio">$280 MXN</div>
-        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+        <a class="btn"
+           href="https://wa.me/527123421171?text=Me%20interesa%20el%20Collar%20Hombre">
+           Comprar por WhatsApp
+        </a>
       </div>
+    </div>
 
-      <img src="images/collar_C4.png" alt="Collar Tentaciones">
+    <!-- MEN -->
+    <div class="card producto men">
+      <img src="images/collar_C4.png" alt="">
       <div class="info">
-        <h3>Collar Acero Inoxidable</h3>
+        <h3>Collar Acero Inoxidable Hombre</h3>
         <div class="precio">$270 MXN</div>
-        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+        <a class="btn"
+           href="https://wa.me/527123421171?text=Me%20interesa%20el%20Collar%20Acero%20Hombre">
+           Comprar por WhatsApp
+        </a>
       </div>
-
-    <!-- DUPLICA ESTA CARD PARA MAS PRODUCTOS -->
+    </div>
 
   </div>
 </section>
 
 <footer>
   © 2026 <strong>Tentaciones Joyería & Accesorios</strong><br>
-  Ventas por WhatsApp | Instagram | Bazar físico (temporadas)
+  Ventas por WhatsApp
 </footer>
 
-      <script>
-      function filtrar(categoria) {
-        const productos = document.querySelectorAll('.producto');
-      
-        productos.forEach(p => {
-          if (categoria === 'all' || p.classList.contains(categoria)) {
-            p.style.display = 'block';
-          } else {
-            p.style.display = 'none';
-          }
-        });
-      }
-      </script>
-    
+<script>
+function filtrar(categoria){
+  const productos = document.querySelectorAll('.producto');
+
+  productos.forEach(p=>{
+    if(categoria==='all' || p.classList.contains(categoria)){
+      p.style.display='block';
+    }else{
+      p.style.display='none';
+    }
+  });
+}
+</script>
+
 </body>
 </html>
