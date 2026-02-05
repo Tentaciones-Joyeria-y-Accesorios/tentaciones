@@ -47,9 +47,6 @@
     *{box-sizing:border-box}
 
     body{
-
-    
-
       
       margin:0;
       font-family:'Montserrat', sans-serif;
@@ -191,6 +188,30 @@
     }
 
     footer strong{color:var(--vino)}
+
+    .filtros{
+        display:flex;
+        justify-content:center;
+        gap:15px;
+        margin-bottom:40px;
+      }
+      
+      .filtros button{
+        padding:10px 24px;
+        border-radius:30px;
+        border:1px solid var(--oro);
+        background:#fff;
+        color:var(--texto);
+        font-family:'Montserrat', sans-serif;
+        cursor:pointer;
+        transition:.3s;
+      }
+      
+      .filtros button:hover{
+        background:var(--oro);
+        color:#fff;
+      }
+
   </style>
 </head>
 <body>
@@ -217,17 +238,72 @@
 </section>
 
 <section class="catalogo" id="catalogo">
+  
+  <!-- FILTROS -->
+  <div class="filtros">
+    <button onclick="filtrar('all')">Todo</button>
+    <button onclick="filtrar('woman')">Woman</button>
+    <button onclick="filtrar('men')">Men</button>
+  </div>
+
   <div class="grid">
 
-    <!-- PRODUCTO -->
-    <div class="card">
-      <img src="AQUI_TU_IMAGEN.jpg" alt="Anillo Tentaciones">
+    <div class="card producto woman">
+      
+      <img src="images/collar_H1.png" alt="Collar Tentaciones">
+        <div class="info">
+            <h3>Collar Oro Laminado y Circonia</h3>
+            <div class="precio">$260 MXN</div>
+            <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+        </div>
+
+      <img src="images/collar_V1.png" alt="Collar Tentaciones">
       <div class="info">
-        <h3>Anillo Oro Laminado</h3>
-        <div class="precio">$1,200 MXN</div>
-        <a href="https://wa.me/527123421171" class="btn">Comprar por WhatsApp</a>
+        <h3>Collar Oro Laminado</h3>
+        <div class="precio">$200 MXN</div>
+        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
       </div>
-    </div>
+
+      <img src="images/collar_C2.png" alt="Collar Tentaciones">
+      <div class="info">
+        <h3>Collar Oro Laminado</h3>
+        <div class="precio">$250 MXN</div>
+        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+      </div>
+
+      <img src="images/collar_C3.png" alt="Collar Tentaciones">
+      <div class="info">
+        <h3>Collar Oro Laminado</h3>
+        <div class="precio">$290 MXN</div>
+        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+      </div>
+
+      <img src="images/collar_F1.png" alt="Collar Tentaciones">
+      <div class="info">
+        <h3>Collar Acero Inoxidable</h3>
+        <div class="precio">$220 MXN</div>
+        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+      </div>
+      
+    <div class="card producto men">
+
+    <!-- PRODUCTO 
+    <div class="card">
+    </div>-->
+
+      <img src="images/collar_C1.png" alt="Collar Tentaciones">
+      <div class="info">
+        <h3>Collar Oro Laminado</h3>
+        <div class="precio">$280 MXN</div>
+        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+      </div>
+
+      <img src="images/collar_C4.png" alt="Collar Tentaciones">
+      <div class="info">
+        <h3>Collar Acero Inoxidable</h3>
+        <div class="precio">$270 MXN</div>
+        <a href="https://wa.me/527123421171?text=Me%20interesa%20este%20producto." class="btn">Comprar por WhatsApp</a>
+      </div>
 
     <!-- DUPLICA ESTA CARD PARA MAS PRODUCTOS -->
 
@@ -239,5 +315,19 @@
   Ventas por WhatsApp | Instagram | Bazar físico (temporadas)
 </footer>
 
+      <script>
+      function filtrar(categoria) {
+        const productos = document.querySelectorAll('.producto');
+      
+        productos.forEach(p => {
+          if (categoria === 'all' || p.classList.contains(categoria)) {
+            p.style.display = 'block';
+          } else {
+            p.style.display = 'none';
+          }
+        });
+      }
+      </script>
+    
 </body>
 </html>
