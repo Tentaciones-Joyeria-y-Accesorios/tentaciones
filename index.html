@@ -171,28 +171,31 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
+      background: linear-gradient(145deg, #E6D3A3, #C9A24D);
+      color: #7A1F3D;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
       text-align: center;
-      font-size: 28px;
-      line-height: 60px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      font-size: 34px;
+      line-height: 68px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
       z-index: 999;
       text-decoration: none;
-      transition: transform .3s ease;
+      border: 2px solid #C9A24D;
+      transition: all .3s ease;
     }
     
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
+      background: linear-gradient(145deg, #C9A24D, #7A1F3D);
+      color: #fff;
     }
 
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  
 </head>
 
 <body>
@@ -456,8 +459,9 @@
   
   <a href="https://wa.me/527123421171?text=Hola%20me%20interesa%20una%20pieza%20de%20Tentaciones"
      class="whatsapp-float"
-     target="_blank">
-     💬
+     target="_blank"
+      aria-label="WhatsApp">
+     <i class="fab fa-whatsapp"></i>
   </a>
 
 </body>
