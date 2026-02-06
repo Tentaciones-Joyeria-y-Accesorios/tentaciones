@@ -166,6 +166,29 @@
       font-size:13px;
       color:#777;
     }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+      line-height: 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform .3s ease;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -173,10 +196,12 @@
 </head>
 
 <body>
-<div id="top"></div>
-<header class="logo-header">
-  <img src="images/logo.png" alt="Logo Tentaciones" class="logo">
-</header>
+
+  <div id="top"></div>
+
+  <header class="logo-header">
+    <img src="images/logo.png" alt="Logo Tentaciones" class="logo">
+  </header>
 
 <nav>
   <div class="filtros">
@@ -428,6 +453,12 @@
             });
           });
   </script>
+  
+  <a href="https://wa.me/527123421171?text=Hola%20me%20interesa%20una%20pieza%20de%20Tentaciones"
+     class="whatsapp-float"
+     target="_blank">
+     💬
+  </a>
 
 </body>
 </html>
