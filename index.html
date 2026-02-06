@@ -8,6 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     :root{
       --marfil:#F8F5EF;
       --oro:#C9A24D;
@@ -168,16 +173,16 @@
 </head>
 
 <body>
-
+<div id="top"></div>
 <header class="logo-header">
   <img src="images/logo.png" alt="Logo Tentaciones" class="logo">
 </header>
 
 <nav>
   <div class="filtros">
-    <button onclick="filtrar('all')">Todo</button>
-    <button onclick="filtrar('woman')">Woman</button>
-    <button onclick="filtrar('men')">Men</button>
+    <button onclick="irArriba(); filtrar('all')">Todo</button>
+    <button onclick="irArriba(); filtrar('woman')">Woman</button>
+    <button onclick="irArriba(); filtrar('men')">Men</button>
     <button onclick="location.href='#contacto'">Contacto</button>
   </div>
 </nav>
@@ -374,18 +379,26 @@
 
   <!-- Filtra ya sea Woman o Men -->
 <script>
-function filtrar(categoria){
-  const productos = document.querySelectorAll('.producto');
+  function filtrar(categoria){
+    const productos = document.querySelectorAll('.producto');
+  
+    productos.forEach(p=>{
+      if(categoria==='all' || p.classList.contains(categoria)){
+        p.style.display='block';
+      }else{
+        p.style.display='none';
+      }
+    });
+  }
+  
+  function irArriba(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  </script>
 
-  productos.forEach(p=>{
-    if(categoria==='all' || p.classList.contains(categoria)){
-      p.style.display='block';
-    }else{
-      p.style.display='none';
-    }
-  });
-}
-</script>
 
   <!-- Comprar por whatsapp -->    
   <script>
